@@ -2,6 +2,7 @@ const bill = document.querySelector("#bill");
 const option = document.querySelector("#option");
 const people = document.querySelector("#people");
 const btn = document.querySelector(".modal-close");
+const modalBody = document.querySelector('.modal-body1');
 const result = document.querySelector('#result');
 
 document.querySelector("#form").addEventListener("submit", (e) => {
@@ -25,7 +26,13 @@ document.querySelector("#form").addEventListener("submit", (e) => {
     result.append(`Total Tip: ${totalTip}`);
     
     bill.value = '';
-    option.value = '';
     people.value = '';
+
     
+    $(".modal").on("hidden.bs.modal", function () {
+        //   $(".modal-body1").html("");
+        location.reload();
+        });
+        
 });
+    
